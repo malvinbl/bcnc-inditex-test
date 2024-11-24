@@ -112,4 +112,17 @@ class PriceControllerTest extends AbstractIntegrationTest {
             .andReturn().getResponse().getContentAsString();
     }
 
+    @Test
+    void test_malformed_json() throws Exception {
+        mockMvc.perform(
+                get(URL).contentType("application/json")
+                    .param("date", "2020-06-16z21:00:00")
+                    .param("productId", "35455")
+                    .param("brandId", "1")
+            )
+            .andExpect(status().is(HttpStatus.BAD_REQUEST.value()))
+            .andExpect(jsonPath("$.error", is("Malformed JSON request")))
+            .andReturn().getResponse().getContentAsString();
+    }
+
 }
