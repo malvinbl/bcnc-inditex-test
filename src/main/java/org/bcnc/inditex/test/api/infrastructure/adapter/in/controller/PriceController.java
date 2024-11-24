@@ -25,9 +25,9 @@ public class PriceController {
     private final PriceService priceService;
     private final PriceMapper priceMapper;
 
-    @Operation(summary = "Get pricing details")
-    @GetMapping("/details")
-    public ResponseEntity<PriceDetailResponse> getPricingDetails(
+    @Operation(summary = "Get price detail")
+    @GetMapping("/detail")
+    public ResponseEntity<PriceDetailResponse> getPriceDetail(
         @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
         @RequestParam(name = "date")
         LocalDateTime date,
@@ -38,8 +38,8 @@ public class PriceController {
         @RequestParam(name = "brandId")
         Long brandId
     ) {
-        PriceDetail pricingDetails = priceService.getPricingDetails(date, productId, brandId);
-        PriceDetailResponse response = priceMapper.toPriceDetailResponse(pricingDetails);
+        PriceDetail priceDetail = priceService.getPriceDetail(productId, brandId, date);
+        PriceDetailResponse response = priceMapper.toPriceDetailResponse(priceDetail);
         return ResponseEntity.ok(response);
     }
 

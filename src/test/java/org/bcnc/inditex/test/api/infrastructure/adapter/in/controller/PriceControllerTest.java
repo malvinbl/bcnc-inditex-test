@@ -16,7 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 class PriceControllerTest extends AbstractIntegrationTest {
 
-    private static final String URL = "/prices/details";
+    private static final String URL = "/prices/detail";
 
     @Autowired
     private WebApplicationContext webApplicationContext;
