@@ -1,6 +1,8 @@
 package org.bcnc.inditex.test.api.domain.service;
 
+import org.bcnc.inditex.test.api.application.usecase.PriceDetailServiceUseCase;
 import org.bcnc.inditex.test.api.domain.model.PriceDetail;
+import org.bcnc.inditex.test.api.domain.port.out.PriceRepositoryPort;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
