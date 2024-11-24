@@ -13,8 +13,8 @@ public class PriceService {
 
     private final PriceDetailService priceDetailService;
 
-    public PriceDetail getPricingDetails(LocalDateTime date, Long productId, Long brandId) {
-        return priceDetailService.getPricingDetails(date, productId, brandId);
+    public PriceDetail getPriceDetail(Long productId, Long brandId, LocalDateTime date) {
+        return priceDetailService.getPriceDetail(productId, brandId, date);
     }
 
 }

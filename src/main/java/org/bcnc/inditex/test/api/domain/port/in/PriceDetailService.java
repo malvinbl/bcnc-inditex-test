@@ -6,6 +6,6 @@ import java.time.LocalDateTime;
 
 public interface PriceDetailService {
 
-    PriceDetail getPricingDetails(LocalDateTime date, Long productId, Long brandId);
+    PriceDetail getPriceDetail(Long productId, Long brandId, LocalDateTime date);
 
 }

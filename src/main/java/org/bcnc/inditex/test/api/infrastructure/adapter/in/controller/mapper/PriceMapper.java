@@ -8,7 +8,13 @@ import org.springframework.stereotype.Component;
 public class PriceMapper {
 
     public PriceDetailResponse toPriceDetailResponse(PriceDetail priceDetail) {
-        return new PriceDetailResponse(priceDetail.productId(), priceDetail.brandId(), priceDetail.priceList(), priceDetail.date(), priceDetail.price());
+        return new PriceDetailResponse(
+            priceDetail.productId(),
+            priceDetail.brandId(),
+            priceDetail.priceList(),
+            priceDetail.date(),
+            priceDetail.price()
+        );
     }
 
 }
