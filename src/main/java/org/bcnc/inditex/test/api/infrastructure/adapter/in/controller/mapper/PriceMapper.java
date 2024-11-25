@@ -12,7 +12,8 @@ public class PriceMapper {
             priceDetail.productId(),
             priceDetail.brandId(),
             priceDetail.priceList(),
-            priceDetail.date(),
+            priceDetail.startDate(),
+            priceDetail.entDate(),
             priceDetail.price()
         );
     }

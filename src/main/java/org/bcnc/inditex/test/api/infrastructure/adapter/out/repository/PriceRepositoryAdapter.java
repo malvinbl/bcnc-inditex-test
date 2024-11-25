@@ -20,7 +20,7 @@ public class PriceRepositoryAdapter implements PriceRepositoryPort {
     @Override
     public Stream<PriceDetail> findPricingDetails(Long productId, Long brandId, LocalDateTime date) {
         Stream<PriceEntity> priceEntities = jpaPriceRepository.findByParams(productId, brandId, date);
-        return priceEntityMapper.toPriceDetailStream(priceEntities, date);
+        return priceEntityMapper.toPriceDetailStream(priceEntities);
     }
 
 }

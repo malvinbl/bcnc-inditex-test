@@ -9,7 +9,9 @@ public record PriceDetailResponse(
     Long brandId,
     Long priceList,
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
-    LocalDateTime date,
+    LocalDateTime startDate,
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    LocalDateTime endDate,
     Double price
     ) {
 }
