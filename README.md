@@ -1,3 +1,58 @@
-# bcnc-inditex-test
+# Bcnc Inditex Test
 
+## Overview
+The repo contains the implementation of a Rest API that provides a solution to the BCNC Group technical test.
+
+## Guidelines
+
+1. Clone this repository
+
+2. Go to the project directory
+
+3. Run the project
+    ```sh
+    ./gradlew bootRun
+    ```
+
+### Swagger
 http://localhost:8080/inditex-test/v1/swagger-ui/index.html
+
+#### Data to consult:
+
+productId: 35455
+
+brandId: 1
+
+date:
+
+    test_1: 2020-06-14T10:00:00
+
+    test_2: 2020-06-14T16:00:00
+
+    test_3: 2020-06-14T21:00:00
+
+    test_4: 2020-06-15T10:00:00
+
+    test_5: 2020-06-16T21:00:00
+
+## More Info
+It is used:
+   
+   Spring Boot v3.2.2
+
+   Java 21
+
+A Hexagonal Architecture is implemented, taking into account the concepts of Clean Architecture and Clean Code.
+These concepts are supported by the principles of good software development practices such as S.O.L.I.D, KISS, DRY.
+This is done in order to create a computer system focused on separating business concerns from technical concerns.
+And to obtain higher quality software, easy to test and easy to maintain over time.
+
+Hibernate is used for persistence management.
+
+Different Java language options are taken into account, such as Stream, Records, to achieve more optimal code.
+
+Git is used as a version control system. Taking into account the Gitflow model.
+
+The data schema is modeled as a relational database. Database performance is optimized by using indexes.
+
+Code, unit and integration tests are implemented. Using JUnit, Mockito, MockMvc.
