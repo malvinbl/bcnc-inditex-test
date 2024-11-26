@@ -1,26 +1,23 @@
 package org.bcnc.inditex.test.api.domain.service;
 
-import org.bcnc.inditex.test.api.application.usecase.PriceDetailServiceUseCase;
 import org.bcnc.inditex.test.api.domain.model.PriceDetail;
-import org.bcnc.inditex.test.api.domain.port.out.PriceRepositoryPort;
+import org.bcnc.inditex.test.api.domain.port.in.PriceDetailService;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
-import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 class PriceServiceTest {
 
-    PriceRepositoryPort priceRepositoryPort = mock(PriceRepositoryPort.class);
-
-    PriceService priceService = new PriceService(
-        new PriceDetailServiceUseCase(
-            priceRepositoryPort
-        )
-    );
+    private @Mock PriceDetailService priceDetailService;
+    private @InjectMocks PriceService priceService;
 
     @Test
     void should_get_priceDetail_given_productId_and_brandId_and_date() {
@@ -42,7 +39,7 @@ class PriceServiceTest {
             35.50
         );
 
-        when(priceRepositoryPort.findPricingDetails(productId, brandId, date)).thenReturn(Stream.of(expectedResponse));
+        when(priceDetailService.getPriceDetail(productId, brandId, date)).thenReturn(expectedResponse);
 
 
         PriceDetail actualResponse = priceService.getPriceDetail(productId, brandId, date);
