@@ -3,6 +3,8 @@ package org.bcnc.inditex.test.api.application.usecase;
 import org.bcnc.inditex.test.api.domain.model.PriceDetail;
 import org.bcnc.inditex.test.api.domain.port.in.PriceDetailService;
 import org.bcnc.inditex.test.api.domain.port.out.PriceRepositoryPort;
+import org.bcnc.inditex.test.api.infrastructure.config.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,6 +22,7 @@ public class PriceDetailServiceUseCase implements PriceDetailService {
         this.pricePriorityComparator = Comparator.comparing(PriceDetail::priority);
     }
 
+    @Cacheable(value = CacheConfig.PRICE_DETAIL_CACHE, unless = "#result == null")
     @Transactional(readOnly = true)
     @Override
     public PriceDetail getPriceDetail(Long productId, Long brandId, LocalDateTime date) {
