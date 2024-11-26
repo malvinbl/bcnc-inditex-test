@@ -61,4 +61,6 @@ The data schema is modeled as a relational database. Database performance is opt
 
 Different Java language options are taken into account, such as Stream, Records, to achieve more optimal code.
 
+A cache strategy is implemented to improve application performance.
+
 Code, unit and integration tests are implemented. Using JUnit, Mockito, MockMvc.
