@@ -35,6 +35,11 @@ date:
 
     test_5: 2020-06-16T21:00:00
 
+### Run the project
+   ```sh
+   ./gradlew test
+   ```
+
 ## More Info
 It is used:
    
@@ -47,12 +52,13 @@ These concepts are supported by the principles of good software development prac
 This is done in order to create a computer system focused on separating business concerns from technical concerns.
 And to obtain higher quality software, easy to test and easy to maintain over time.
 
-Hibernate is used for persistence management.
-
-Different Java language options are taken into account, such as Stream, Records, to achieve more optimal code.
+Gradle is used to manage dependencies.
 
 Git is used as a version control system. Taking into account the Gitflow model.
 
+Hibernate is used for persistence management.
 The data schema is modeled as a relational database. Database performance is optimized by using indexes.
+
+Different Java language options are taken into account, such as Stream, Records, to achieve more optimal code.
 
 Code, unit and integration tests are implemented. Using JUnit, Mockito, MockMvc.
